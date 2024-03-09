@@ -1,3 +1,5 @@
+import click_icon from "../../../public/assets/chevron-right.svg";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -18,11 +20,12 @@ export function Hero() {
           No more roomate Drama..
         </p>
 
-        <div className="flex w-full pt-8 justify-center gap-x-6 ">
-          <button className="bg-[#4328EB] w-1/2 py-4 px-8 text-white rounded-[4px] lg:w-fit">
-            <p>click</p>
-          </button>
-
+        <div className="flex w-full pt-8 gap-x-6 justify-end ">
+          <div>
+            <button className="bg-transparent w-1/2 py-4 px-8 text-white rounded-[4px]  items-start lg:w-fit">
+              <Image src={click_icon} alt="next_icon" className="h-20 w-20" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -7,7 +7,6 @@ export default function Home() {
       <div>
         <Navbar/>
         <Hero/>
-        <h1>hi this is my page</h1>
       </div>
     </body>
   );
