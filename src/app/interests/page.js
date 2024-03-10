@@ -3,12 +3,12 @@
 import React, { useState } from "react";
 import { Navbar } from "../components/Navbar";
 
-const RoommateRecommendationForm = () => {
-  const [income, setIncome] = useState("10000+");
-  const [cleanliness, setCleanliness] = useState(5);
-  const [lifestyle, setLifestyle] = useState([]);
-  const [hobbies, setHobbies] = useState("");
-  const [isEditable, setIsEditable] = useState(false);
+ const RoommateRecommendationForm = () => {
+ const [income, setIncome] = useState("10000+");
+ const [cleanliness, setCleanliness] = useState(5);
+ const [lifestyle, setLifestyle] = useState([]);
+ const [hobbies, setHobbies] = useState("");
+ const [isEditable, setIsEditable] = useState(false);
 
   const handleIncomeChange = (e) => {
     setIncome(e.target.value);
@@ -44,28 +44,49 @@ const RoommateRecommendationForm = () => {
     <>
       <Navbar />
       <div className="mt-8 ml-16 flex flex-col justify-center align-center w-[70%] items-start">
-        <h1 className="text-[#2e2e2e] font-bold mb-4 text-grey text-[40px] lg:leading-[48px] p-3">
-          Let's get To Know You 
+        <h1 className="text-[#2e2e2e] font-bold mb-4 text-grey text-[40px] lg:leading-[48px] p-8">
+          Let's get To Know You
         </h1>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-y-4 w-full">
+        <form onSubmit={handleSubmit} className="flex flex-col pl-10
+         gap-y-8 w-full">
           <div class="relative">
-            <input
-              type="text"
-              id="profession"
+            <select
               name="profession"
-              placeholder="profession"
+              id="profession"
+              defaultValue=""
               class="border rounded-lg px-4 py-2 w-[60%] text-gray-700 focus:outline-none focus:border-blue-500 focus:scale-105 transition-all duration-300 ease-in-out"
-            />
+            >
+              <option value="" disabled selected>
+                Select your profession
+              </option>
+              <option value="student">Student</option>
+              <option value="bachelor">Bachelor</option>
+              <option value="intern">Intern</option>
+              <option value="business">Business</option>
+              <option value="yet_to_figure">Yet to figure</option>
+            </select>
           </div>
 
           <div class="relative">
-            <input
-              type="text"
-              id="lifestyle"
-              name="lifestyle"
-              placeholder="lifestyle"
+            <select
+              name="profession"
+              id="profession"
+              defaultValue=""
               class="border rounded-lg px-4 py-2 w-[60%] text-gray-700 focus:outline-none focus:border-blue-500 focus:scale-105 transition-all duration-300 ease-in-out"
-            />
+            >
+              <option value="" disabled selected>
+                how do u say your lifestyle as
+              </option>
+              <option value="caffeine_composer">Caffeine Composer</option>
+              <option value="urban_jungle_explorer">
+                Urban Jungle Explorer
+              </option>
+              <option value="cosmic_surfing_nomad">Cosmic Surfing Nomad</option>
+              <option value="retro_virtualist">Retro Virtualist</option>
+              <option value="wandering_glitch_artist">
+                Wandering Glitch Artist
+              </option>
+            </select>
           </div>
 
           <div class="relative">
@@ -73,7 +94,7 @@ const RoommateRecommendationForm = () => {
               type="text"
               id="hobbies"
               name="hobbies"
-              placeholder="hobbies"
+              placeholder="Your hobbies (,)"
               class="border rounded-lg px-4 py-2 w-[60%] text-gray-700 focus:outline-none focus:border-blue-500 focus:scale-105 transition-all duration-300 ease-in-out"
             />
           </div>
@@ -83,19 +104,32 @@ const RoommateRecommendationForm = () => {
               type="text"
               id="city"
               name="city"
-              placeholder="city"
+              placeholder="city your going to stay"
               class="border rounded-lg px-4 py-2 w-[60%] text-gray-700 focus:outline-none focus:border-blue-500 focus:scale-105 transition-all duration-300 ease-in-out"
             />
           </div>
+
+          <div class="relative">
+            <input
+              type="text"
+              id="insta_id"
+              name="insta_id"
+              placeholder="your Insta handle"
+              class="border rounded-lg px-4 py-2 w-[60%] text-gray-700 focus:outline-none focus:border-blue-500 focus:scale-105 transition-all duration-300 ease-in-out"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="bg-black text-white font-semibold py-2 px-4 w-[30%] border border-black rounded hover:bg-white hover:text-black transition-colors flex- duration-300"
+          >
+            Submit
+          </button>
         </form>
       </div>
 
-      {/* <div className="mt-8 ml-16 flex items-center justify-between ">
-        <div className="bg-[#FFFF] p-16 rounded-[5px] w-[70%] ">
-          <h1 className="text-2xl font-medium mb-4 text-[60px] lg:leading-[60px]">
-            Let's get To Know You{" "}
-          </h1>
-          <form onSubmit={handleSubmit}>
+      {/*
+        
             <div className="flex flex-col p-5 border border-gray-300 rounded-lg m-5">
               <label
                 htmlFor="income-toggle"
